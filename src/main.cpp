@@ -208,7 +208,7 @@ int main(const int argc, const char** argv) {
     squares.reserve(total_squares);
     for (size_t i = 1; i <= total_squares; i++)
     {
-        squares.emplace_back(i, (uint8_t)0, *const_cast<char*>(&empty));
+        squares.emplace_back(i, (uint8_t)0, empty);
     }
     
     sides.assign(total_sides, false);
