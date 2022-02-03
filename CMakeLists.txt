@@ -16,3 +16,11 @@ list(APPEND HEADERS_MAIN "include/placeholder.h")
 target_include_directories("${TARGET_MAIN}" PRIVATE 
     $HEADERS_MAIN
 )
+
+if (NOT MSVC)
+    if (${CMAKE_BUILD_TYPE} MATCHES "Release")
+        add_compile_options("-O2")
+    elseif(${CMAKE_BUILD_TYPE} MATCHES "Debug")
+        add_compile_options("-O0 -g")
+    endif()
+endif()
